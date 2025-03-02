@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../Global/Style.css';
+
 function Footer() {
 
   const sections = [

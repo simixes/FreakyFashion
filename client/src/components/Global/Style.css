@@ -169,6 +169,11 @@ a {
     display: none;
 }
 
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .main-item {
     margin: 20px 10px 20px 10px;
     display: flex;
@@ -436,8 +441,11 @@ a {
 
     .main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr; */
         
+    }
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
     }
     .main-item-description { /* Förklaringarna efter bild */
         grid-template-columns: 2fr 1.5fr;
@@ -572,8 +580,12 @@ a {
 
     .main {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr 1fr 1fr; */
         
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .new-icon {

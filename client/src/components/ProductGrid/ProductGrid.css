@@ -1,0 +1,21 @@
+/* Grundinställning - Mobil first (1 kolumn) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 1 kolumn */
+  }
+  
+  /* Vid min-width: 640px, 2x2 grid */
+  @media (min-width: 640px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolumner */
+    }
+  }
+  
+  /* Vid min-width: 1024px, 4x4 grid */
+  @media (min-width: 1024px) {
+    .product-grid {
+      grid-template-columns: repeat(4, 1fr); /* 4 kolumner */
+    }
+  }
+  
+  

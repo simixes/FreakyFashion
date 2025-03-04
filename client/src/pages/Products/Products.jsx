@@ -1,6 +1,7 @@
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Carousel from "../../components/Carousel/Carousel";
 
 function Products({ products }) {
   let params = useParams();
@@ -20,6 +21,8 @@ function Products({ products }) {
   return product ? (
     <main className="main-grid">
       <ProductDetails product={product} />
+
+      <Carousel products={products}/>
 
     </main>
   ) : (

@@ -485,6 +485,8 @@ a {
         display: flex;
         border-top: 3px solid gold;
         background-color: rgb(231, 231, 230);
+        text-align: center;
+        justify-content: center;
     }
 
     .footer-item {

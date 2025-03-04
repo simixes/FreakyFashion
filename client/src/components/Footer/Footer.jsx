@@ -105,7 +105,7 @@ function Footer() {
             <li>Inställningar</li>
             <li>
               <a target="_blank" rel="noopener noreferrer" href="/admin/products">
-                Inloggning och säkerhet
+                Inloggning
               </a>
             </li>
             <li>Betalningsalternativ</li>

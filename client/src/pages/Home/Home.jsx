@@ -1,8 +1,7 @@
 import React from "react";
-// import "./Home.css";
-import Hero from "../../components/Hero/Hero";         // Rätt relativ sökväg
-import Spots from "../../components/Spots/Spots";       // Rätt relativ sökväg
-import ProductGrid from "../../components/ProductGrid/ProductGrid"; // Rätt relativ sökväg
+import Hero from "../../components/Hero/Hero";         
+import Spots from "../../components/Spots/Spots";       
+import ProductGrid from "../../components/ProductGrid/ProductGrid"; 
 
 function Home({ products }) {
   return (

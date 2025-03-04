@@ -1,0 +1,30 @@
+import ProductDetails from "../../components/ProductDetails/ProductDetails";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+function Products({ products }) {
+  let params = useParams();
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/api/products/${params.item_url}`)
+      .then((resp) => resp.json())
+      .then((product) => {
+        setProduct(product);
+      })
+      .catch((error) => {
+        console.error("Error fetching product:", error); 
+      });
+  }, [params.item_url]);
+
+  return product ? (
+    <main className="main-grid">
+      <ProductDetails product={product} />
+
+    </main>
+  ) : (
+    "Laddar..."
+  );
+}
+
+export default Products;

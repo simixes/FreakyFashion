@@ -1,6 +1,7 @@
 import '../Global/Style.css';
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from 'react-router-dom';
 
 const Carousel = ({ products }) => {
   const [productGroups, setProductGroups] = useState([]);
@@ -68,13 +69,13 @@ const Carousel = ({ products }) => {
                       className={`carousel-item ${productIndex === 0 ? "active" : ""}`}
                       key={productIndex}
                     >
-                      <a href={`/products/${product.item_url}`}>
-                        <img
-                          src={`/${product.item_image}`}
-                          className="d-block w-100"
-                          alt={product.item_name}
-                        />
-                      </a>
+                  <Link to={`/products/${product.item_url}`}>
+                    <img
+                     src={`/${product.item_image}`}
+                     className="d-block w-100"
+                     alt={product.item_name}
+                     />
+                  </Link>
                       <div className="main-item-description">
                         <h3 className="clothes-item">{product.item_name}</h3>
                         <p className="price">{product.item_price} SEK</p>

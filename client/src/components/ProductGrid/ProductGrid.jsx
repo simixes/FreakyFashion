@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Importera Link från react-router-dom
 import '../Global/Style.css';
-import '../ProductGrid/ProductGrid.css'
+import '../ProductGrid/ProductGrid.css';
 
 function ProductList({ products }) {
   return (
@@ -19,12 +20,12 @@ function ProductList({ products }) {
                   <p>Nyhet!</p>
                 </div>
               )}
-              <a href={`/products/${product.item_url}`}>
+              <Link to={`/products/${product.item_url}`}>
                 <img className="fashion-img" src={product.item_image} alt={product.item_name} />
-              </a>
-              <a className="like-button-filled" href="#">
+              </Link>
+              <Link className="like-button-filled" to="#">
                 <img className="black-heart" src="/images/heart-blanc-svg.svg" alt="Like" />
-              </a>
+              </Link>
             </div>
             <div className="main-item-description">
               <h3 className="clothes-item">{product.item_name}</h3>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Importera Link från react-router-dom
 import '../Global/Style.css';
 
 function ProductDetails({ product }) {
@@ -10,13 +11,13 @@ function ProductDetails({ product }) {
             src={`/${product.item_image}`}
             alt={product.item_name}
           />
-          <a className="product-button-heart" href="#">
+          <Link className="product-button-heart" to="#">
             <img
               className="product-heart"
               src="/images/heart-blanc-svg.svg"
               alt="Like"
             />
-          </a>
+          </Link>
         </div>
         <div className="product-item" id="product-text">
           <h1>{product.item_name}</h1>

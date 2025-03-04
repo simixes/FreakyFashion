@@ -1,4 +1,5 @@
 import '../Global/Style.css';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -27,11 +28,11 @@ function Header() {
 
       <nav className="header-item">
         <ul>
-          <li><a href="/">Hem</a></li>
-          <li><a href="#">Nyheter</a></li>
-          <li><a href="#">Topplistan</a></li>
-          <li><a href="#">Rea</a></li>
-          <li><a href="#">Kampanjer</a></li>
+          <li><Link to="/">Hem</Link></li>
+          <li><Link to="/nyheter">Nyheter</Link></li>
+          <li><Link to="/topplistan">Topplistan</Link></li>
+          <li><Link to="/rea">Rea</Link></li>
+          <li><Link to="/kampanjer">Kampanjer</Link></li>
         </ul>
       </nav>
     </div>

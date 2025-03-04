@@ -1,0 +1,16 @@
+@media (min-width: 640px) {
+
+    .main-item {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .main-item:hover {
+        transform: scale(1.04);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    }
+
+}

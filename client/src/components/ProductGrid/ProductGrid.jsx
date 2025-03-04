@@ -1,5 +1,6 @@
 import React from "react";
 import '../Global/Style.css';
+import '../ProductGrid/ProductGrid.css'
 
 function ProductList({ products }) {
   return (

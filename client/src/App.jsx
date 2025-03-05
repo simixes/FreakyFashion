@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import ProductsPage from './pages/Products/Products'
+import SearchResults from './components/SearchResults/SearchResults';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home products={products} />} />
           <Route path="/products/:item_url" element={<ProductsPage products={products} />} />
+          <Route path="/search" element={<SearchResults products={products} />} />
         </Routes>
       </main>
 

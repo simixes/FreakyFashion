@@ -1,8 +1,17 @@
 import '../Global/Style.css';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Importera useNavigate
 
+function Header({ onSearch }) {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
-function Header() {
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${searchTerm}`); // Navigera till sökresultat-sidan
+    onSearch(searchTerm); // Skicka söktermen till föräldrakomponenten (om det behövs)
+  };
+
   return (
     <div className="header">
       <div className="header-item">
@@ -15,15 +24,21 @@ function Header() {
       </div>
 
       <div className="header-item" id="form-container">
-        <form id="searchForm" action="/search" method="GET">
-          <input type="text" name="q" placeholder="🛒  Sök produkt" />
+        <form id="searchForm" onSubmit={handleSearch}>
+          <input
+            type="text"
+            name="q"
+            placeholder="🛒  Sök produkt"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </form>
-        <a id="likeIcon" href="/">
+        <Link id="likeIcon" to="/">
           <img src="/images/black-heart-svg.svg" alt="likeIcon" />
-        </a>
-        <a id="basketIcon" href="/">
+        </Link>
+        <Link id="basketIcon" to="/">
           <img src="/images/shopping-bag-svg.svg" alt="basketIcon" />
-        </a>
+        </Link>
       </div>
 
       <nav className="header-item">

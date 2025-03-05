@@ -7,6 +7,7 @@ import ProductsPage from './pages/Products/Products'
 import SearchResults from './components/SearchResults/SearchResults';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Basket from './pages/Basket/Basket';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<Home products={products} />} />
           <Route path="/products/:item_url" element={<ProductsPage products={products} />} />
           <Route path="/search" element={<SearchResults products={products} />} />
+          <Route path='/basket' element={<Basket products={products} />} />
         </Routes>
       </main>
 

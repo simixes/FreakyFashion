@@ -51,7 +51,7 @@ const CostumerDetails = () => {
 
           <div className='prenumerant'>
             <input type="checkbox" id="prenumerera-checkbox" name="prenumerera" value="prenumerera"></input>
-            <label for="prenumerera"> Jag vill ta emot nyhetsbrev</label>
+            <label htmlFor="prenumerera"> Jag vill ta emot nyhetsbrev</label>
           </div>
 
         </form>

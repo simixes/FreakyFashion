@@ -70,14 +70,18 @@ function BasketDetails({ showButton, title }) {
       <h3>Produkter: {getTotalCount()} st</h3>
       <h3>Totalt: {getTotalPrice()} SEK</h3>
     </div>
-    <div className='basket-btn-container'>
-      <button className='basket-btn'>Till Kassan</button>
-    </div>
+    <div className="basket-btn-container">
+      {showButton && (
+        <button className="basket-btn">Till Kassan</button>
+      )}
+    </div> 
   </section>
+
+  {/* Basket section after 640px */}
 
   <section className="basket-section-a640">
   <div>
-    <h1>Varukorgen</h1>
+    <h1>{title}</h1>
   </div>
   <div>
     <table className="basket-table">
@@ -126,7 +130,7 @@ function BasketDetails({ showButton, title }) {
       {showButton && (
         <button className="basket-btn">Till Kassan</button>
       )}
-    </div>
+    </div> 
 </section>
 
 

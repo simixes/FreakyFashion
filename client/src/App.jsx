@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Basket from './pages/Basket/Basket';
 import AdminPage from './pages/Admin/AdminPage'
 import SiteLayout from './layout/SiteLayout';
+import AdminLayout from './layout/AdminLayout';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -33,8 +34,10 @@ function App() {
           <Route path='/basket' element={<Basket products={products} />} /> 
         </Route>
 
-        <Route path="/admin/products" element={<AdminPage />} />
-        {/* <Route path="/admin/products/new" element={} /> */}
+        <Route element={<AdminLayout />} >
+          <Route path="/admin/products" element={<AdminPage />} />
+          {/* <Route path="/admin/products/new" element={} /> */}
+        </Route>
 
       </Routes>
     </Router>

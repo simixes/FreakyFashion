@@ -1,8 +1,9 @@
-import AdminLayout from "../../components/Admin/AdminLayout";
 
 function Basket() {
     return (
-        <AdminLayout />
+        <div>
+            <span>Testing, testing</span>
+        </div>
     );
   }
   

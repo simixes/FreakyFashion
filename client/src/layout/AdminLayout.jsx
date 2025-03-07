@@ -1,4 +1,5 @@
-import '../Global/Style.css';
+import '../components/Global/Style.css';
+import { Outlet } from "react-router-dom";
 
 const adminText = { 
     header: "Administration", 
@@ -6,13 +7,13 @@ const adminText = {
 };
 
 
-const AdminLayout = ({children}) => {
+const AdminLayout = () => {
     return (
       <main className="admin">
         <div className="admin-grid" id="header">{adminText.header}</div>
         <div className="admin-grid" id="side-bar">{adminText.sideBar}</div>
         <div className="admin-grid" id="add-new">
-          {children}
+          <Outlet />
         </div>
       </main>
     );

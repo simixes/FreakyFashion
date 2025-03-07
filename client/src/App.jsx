@@ -12,6 +12,7 @@ import AdminPage from './pages/Admin/AdminPage'
 import SiteLayout from './layout/SiteLayout';
 import AdminLayout from './layout/AdminLayout';
 import AdminNewProdPage from './pages/Admin/AdminNewProdPage/AdminNewProdPage'
+import Checkout from './pages/Checkout/Checkout';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/products/:item_url" element={<ProductsPage products={products} />} />
           <Route path="/search" element={<SearchResults products={products} />} />
           <Route path='/basket' element={<Basket products={products} />} /> 
+          <Route path='/checkout' element={<Checkout products={products} />} /> 
         </Route>
 
         <Route element={<AdminLayout />} >

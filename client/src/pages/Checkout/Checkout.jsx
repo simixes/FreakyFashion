@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import BasketDetails from '../../components/BasketDetails/BasketDetails';
+import CostumerDetails from '../../components/Checkout/CostumerDetails';
 
-const showButton = true;
+const showButton = false;
 
-function Basket() {
+function Checkout() {
     return (
       <main className="main-grid">
         <BasketDetails showButton={showButton} />
+        <CostumerDetails />
       </main>
     );
   }
   
-  export default Basket;
+  export default Checkout;

@@ -3,7 +3,7 @@ import "../BasketDetails/Basket.css"
 import '../Global/Style.css';
 
 
-function BasketDetails() {
+function BasketDetails({ showButton }) {
   
   const testProduct = [
     { id: 1, itemName: "Jeans", price: 399 },
@@ -123,8 +123,10 @@ function BasketDetails() {
   </div>
   
   <div className="basket-btn-container">
-    <button className="basket-btn">Till Kassan</button>
-  </div>
+      {showButton && (
+        <button className="basket-btn">Till Kassan</button>
+      )}
+    </div>
 </section>
 
 

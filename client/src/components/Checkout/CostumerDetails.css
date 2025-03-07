@@ -108,6 +108,18 @@ h2 {
 
     }
 
+    #street-form {
+        width: 50%;
+    }
+    
+    #zip-code {
+        width: 15%;
+    }
+    
+    #city-form {
+        width: 35%;
+    }
+
 }
   
   

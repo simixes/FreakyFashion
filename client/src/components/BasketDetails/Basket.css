@@ -160,6 +160,10 @@
         padding: 10px 50px 10px 50px;
     }
 
+    .basket-btn-container {
+      width: 50%;
+   }
+
     .basket-total-amount {
         text-align: center;
     }

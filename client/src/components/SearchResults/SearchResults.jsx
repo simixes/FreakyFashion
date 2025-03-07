@@ -20,7 +20,7 @@ function SearchResults({ products }) {
   return (
     <main>
       <h1 id="h1-search-results">
-        Sökresultat för "<span>{searchTerm}</span>"
+        ({filteredProducts.length}) Sökresultat för "<span>{searchTerm}</span>"
       </h1>
 
       {filteredProducts.length > 0 ? (
@@ -68,7 +68,6 @@ function SearchResults({ products }) {
           <h2 id="main-h2-nonvisible">Inga produkter hittades</h2>
           <div className="product-grid">
             {" "}
-            {/* Samma wrapper som i produktlistan */}
             <article className="main-item placeholder-item">
               <div className="main-item-img">
                 <img

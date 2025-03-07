@@ -40,6 +40,11 @@ function BasketDetails({ showButton, title }) {
 
   return (
 <main>
+
+  {/* --------------------------- */}
+  {/* Basket section before 640px */}
+  {/* --------------------------- */}
+
   <section className="basket-section-mobile">
     <div>
     <h1>{title}</h1>
@@ -77,7 +82,9 @@ function BasketDetails({ showButton, title }) {
     </div> 
   </section>
 
+  {/* -------------------------- */}
   {/* Basket section after 640px */}
+  {/* -------------------------- */}
 
   <section className="basket-section-a640">
   <div>

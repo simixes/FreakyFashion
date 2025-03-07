@@ -10,4 +10,4 @@ function Basket() {
     );
   }
   
-  export default Home;
+  export default Basket;

@@ -8,6 +8,7 @@ import SearchResults from './components/SearchResults/SearchResults';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Basket from './pages/Basket/Basket';
+import AdminPage from './pages/Admin/AdminPage'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -38,7 +39,15 @@ function App() {
       <footer>
         <Footer />
       </footer>
+
+      <Routes>
+        <Route path="/admin/products" element={<AdminPage />} />
+        {/* <Route path="/admin/products/new" element={} /> */}
+      </Routes>
+
     </Router>
+
+    
   );
 }
 

@@ -22,30 +22,30 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <header>
-        <Header />
-      </header>
+    // <Router>
+    //   <header>
+    //     <Header />
+    //   </header>
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home products={products} />} />
-          <Route path="/products/:item_url" element={<ProductsPage products={products} />} />
-          <Route path="/search" element={<SearchResults products={products} />} />
-          <Route path='/basket' element={<Basket products={products} />} />
-        </Routes>
-      </main>
+    //   <main>
+    //     <Routes>
+    //       <Route path="/" element={<Home products={products} />} />
+    //       <Route path="/products/:item_url" element={<ProductsPage products={products} />} />
+    //       <Route path="/search" element={<SearchResults products={products} />} />
+    //       <Route path='/basket' element={<Basket products={products} />} />
+    //     </Routes>
+    //   </main>
 
-      <footer>
-        <Footer />
-      </footer>
+    //   <footer>
+    //     <Footer />
+    //   </footer>
 
-      <Routes>
-        <Route path="/admin/products" element={<AdminPage />} />
-        {/* <Route path="/admin/products/new" element={} /> */}
-      </Routes>
+    //   <Routes>
+    //     <Route path="/admin/products" element={<AdminPage />} />
+    //     <Route path="/admin/products/new" element={} />
+    //   </Routes>
 
-    </Router>
+    // </Router>
 
     
   );

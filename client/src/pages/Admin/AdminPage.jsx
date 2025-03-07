@@ -1,10 +1,9 @@
+import HandleProducts from '../../components/Admin/HandleProducts'
 
-function Basket() {
+function AdminPage() {
     return (
-        <div>
-            <span>Testing, testing</span>
-        </div>
+        <HandleProducts />
     );
   }
   
-  export default Basket;
+  export default AdminPage;

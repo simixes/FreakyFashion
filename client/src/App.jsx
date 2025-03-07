@@ -11,6 +11,7 @@ import Basket from './pages/Basket/Basket';
 import AdminPage from './pages/Admin/AdminPage'
 import SiteLayout from './layout/SiteLayout';
 import AdminLayout from './layout/AdminLayout';
+import AdminNewProdPage from './pages/Admin/AdminNewProdPage/AdminNewProdPage'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -36,7 +37,7 @@ function App() {
 
         <Route element={<AdminLayout />} >
           <Route path="/admin/products" element={<AdminPage />} />
-          {/* <Route path="/admin/products/new" element={} /> */}
+          <Route path="/admin/products/new" element={<AdminNewProdPage />} />
         </Route>
 
       </Routes>

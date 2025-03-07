@@ -4,10 +4,12 @@ import CostumerDetails from '../../components/Checkout/CostumerDetails';
 
 const showButton = false;
 
+const title = "Kassan";
+
 function Checkout() {
     return (
       <main className="main-grid">
-        <BasketDetails showButton={showButton} />
+        <BasketDetails showButton={showButton} title={title} />
         <CostumerDetails />
       </main>
     );

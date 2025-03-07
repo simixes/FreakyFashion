@@ -8,46 +8,56 @@ const CostumerDetails = () => {
       <div>
         <h2>Kunduppgifter</h2>
       </div>
-      <div className="costumer-details-container">
+      <div className="costumer-details">
         <form>
-          <div className="costumer-fname">
-            <label htmlFor="first-name">Förnamn</label>
+          <div className="costumer-form-pt1">
+          <div className="costumer-form-component" id='costumer-fname'>
+            <label htmlFor="first-name">Förnamn</label><br></br>
             <input type="text" id="first-name" name="first-name" required />
           </div>
 
-          <div className="costumer-lname">
-            <label htmlFor="last-name">Efternamn</label>
+          <div className="costumer-form-component" id='costumer-lname'>
+            <label htmlFor="last-name">Efternamn</label><br></br>
             <input type="text" id="last-name" name="last-name" required />
           </div>
 
-          <div className="costumer-email">
-            <label htmlFor="email">E-post</label>
+          <div className="costumer-form-component" id='costumer-email'>
+            <label htmlFor="email">E-post</label><br></br>
             <input type="email" id="email-form" name="email" required />
           </div>
+          </div>
+    
 
           <div className="costumer-fieldset-container">
             <fieldset className="costumer-adress-fieldset">
               <legend>Adress</legend>
-              <label htmlFor="street">Gata</label>
-              <input type="text" id="street-form" name="street" />
 
-              <label htmlFor="zipCode">Postnummer</label>
-              <input type="text" id="zip-code" name="zipCode" />
+              <div className='fieldset-component'>
+              <label htmlFor="street">Gata</label><br></br>
+              <input type="text" id="street-form" name="street" /><br></br>
+              </div>
 
-              <label htmlFor="city">Stad</label>
-              <input type="text" id="city-form" name="city" />
+              <div className='fieldset-component'>
+              <label htmlFor="zipCode">Postnummer</label><br></br>
+              <input type="text" id="zip-code" name="zipCode" /><br></br>
+              </div>
+
+              <div className='fieldset-component'>
+              <label htmlFor="city">Stad</label><br></br>
+              <input type="text" id="city-form" name="city" /><br></br>
+              </div>
             </fieldset>
           </div>
 
-          <div>
-            <input type="checkbox" id="prenumerera-checkbox" name="prenumerera" value="Bike"></input>
+          <div className='prenumerant'>
+            <input type="checkbox" id="prenumerera-checkbox" name="prenumerera" value="prenumerera"></input>
             <label for="prenumerera"> Jag vill ta emot nyhetsbrev</label>
           </div>
 
         </form>
       </div>
-      <div>
-        <button>Köp</button>
+      <div className='btn-container'>
+        <button id='buy-btn'>Köp</button>
       </div>
     </div>
   );

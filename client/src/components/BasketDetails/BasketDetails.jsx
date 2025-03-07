@@ -3,7 +3,7 @@ import "../BasketDetails/Basket.css"
 import '../Global/Style.css';
 
 
-function BasketDetails({ showButton }) {
+function BasketDetails({ showButton, title }) {
   
   const testProduct = [
     { id: 1, itemName: "Jeans", price: 399 },
@@ -42,7 +42,7 @@ function BasketDetails({ showButton }) {
 <main>
   <section className="basket-section-mobile">
     <div>
-    <h1>Varukorgen</h1>
+    <h1>{title}</h1>
     </div>
     <div className="basket-item-container-m">
       {testProduct.map(product => (

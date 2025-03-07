@@ -1,0 +1,116 @@
+h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.costumer-form-pt1 {
+    margin: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.costumer-form-component label {
+    margin-top: 15px;
+}
+
+.costumer-form-component input {
+    margin-top: 15px;
+    width: 100%;
+}
+
+#costumer-email {
+    margin-bottom: 15px;
+}
+
+.costumer-adress-fieldset legend {
+    font-size: 24px;
+}
+
+.fieldset-component {
+    margin: 20px;
+}
+
+.fieldset-component label {
+    margin-top: 15px;
+}
+
+.fieldset-component input {
+    margin-top: 15px;
+}
+
+#street-form {
+    width: 100%;
+}
+
+#zip-code {
+    width: 40%;
+}
+
+#city-form {
+    width: 100%;
+}
+
+.prenumerant {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.prenumerant label {
+    margin-left: 15px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+#buy-btn {
+    width: 50%;
+    font-size: 22px;
+    margin: 20px 20px 30px 20px;
+    padding: 5px 0 5px 0;
+    border-radius: 5px;
+    background-color: rgb(216, 164, 31); 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+  @media (min-width: 640px) {
+
+    h2 {
+        text-align: start;
+        margin-left: 20px;
+    }
+
+    .costumer-form-pt1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    #street-form {
+        width: 100%;
+    }
+    
+    #zip-code {
+        width: 35%;
+    }
+    
+    #city-form {
+        width: 50%;
+    }
+
+  }
+  
+  @media (min-width: 1024px) {
+
+    .costumer-form-pt1 {
+        margin-right: 40%;
+
+    }
+
+}
+  
+  
+  
+  
+  

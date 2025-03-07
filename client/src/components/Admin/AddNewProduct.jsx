@@ -30,7 +30,7 @@ const AddNewProduct = () => {
             id="imgFile"
             name="filen"
             accept="image/*"
-            placeholder="images/Products/.."
+            placeholder="/images/Products/.."
             required
           /><br />
 

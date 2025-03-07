@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import '../Global/Style.css';
 
 function Footer() {
@@ -104,10 +105,10 @@ function Footer() {
             </li>
             <li>Inställningar</li>
             <li>
-              <a target="_blank" rel="noopener noreferrer" href="/admin/products">
-                Inloggning
-              </a>
-            </li>
+              <Link to="/admin/products">
+              Inloggning
+              </Link>
+           </li>
             <li>Betalningsalternativ</li>
             <li>Dina adresser</li>
             <li>Dina beställningar</li>

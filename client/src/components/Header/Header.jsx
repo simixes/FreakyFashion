@@ -1,6 +1,6 @@
 import '../Global/Style.css';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Importera useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header({ onSearch }) {
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ function Header({ onSearch }) {
           src="/images/FreakyFashionLogoInvis.png"
           alt="Freaky Fashion Logo"
           style={{ cursor: "pointer" }}
+          onClick={() => navigate("/")}
         />
       </div>
 

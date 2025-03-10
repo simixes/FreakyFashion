@@ -375,6 +375,10 @@ a {
         width: 100%;
     }
 
+    #searchForm input {
+        margin-left: 3%;
+    }
+
     #form-container {
         flex-grow: 1;
         display: flex; 
@@ -536,6 +540,12 @@ a {
 
     #freakyFashionMainLogo { /* Freaky Fashion loggo */
         height: 90px;
+    }
+
+    #searchForm input {
+        padding: 5px;
+        width: 360px;
+        margin-left: 5%;
     }
 
     /* --------HERO PART------- */
@@ -859,7 +869,7 @@ a {
     color: rgb(51, 51, 51);
     margin: 0 20px 15px 0;
     padding: 30px;
-    height: 100vh;
+    height: 70vw;
     max-width: 400px;
     background-color: rgb(226, 226, 226);
     border-right: 2px solid rgb(51, 51, 51);

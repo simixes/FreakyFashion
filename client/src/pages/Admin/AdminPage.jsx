@@ -1,8 +1,8 @@
 import HandleProducts from '../../components/Admin/HandleProducts'
 
-function AdminPage() {
+function AdminPage({ products }) {
     return (
-        <HandleProducts />
+        <HandleProducts products={products} />
     );
   }
   

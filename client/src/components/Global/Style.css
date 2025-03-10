@@ -295,6 +295,11 @@ a {
     margin: 10px;
     
 }
+
+.footer-icons {
+    margin: 55px 0 55px 0;
+}
+
 .site-icons img {
     width: 50px;
     margin: 20px 0px 20px 30px;

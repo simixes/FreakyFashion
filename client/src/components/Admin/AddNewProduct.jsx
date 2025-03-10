@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddNewProduct = () => {
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
 
@@ -11,14 +14,18 @@ const AddNewProduct = () => {
     fetch("http://localhost:8000/api/products", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", 
       },
       body: JSON.stringify(item),
     })
-     .then(resp => {
-      console.log("Produkt tillagd");
-     });
-  }
+      .then((resp) => resp.json()) 
+      .then((data) => {
+        alert("Produkten har lagts till!");
+
+        navigate("/");
+      })
+      .catch((error) => console.error("Fel vid inläggning:", error));
+  };
 
   const [formData, setFormData] = useState({
     name: "",

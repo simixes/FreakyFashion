@@ -22,7 +22,7 @@ const AddNewProduct = () => {
       .then((data) => {
         alert("Produkten har lagts till!");
 
-        navigate("/");
+        navigate("/admin/products");
       })
       .catch((error) => console.error("Fel vid inläggning:", error));
   };

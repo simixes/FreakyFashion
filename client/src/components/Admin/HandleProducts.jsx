@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const AdminProducts = ({ products }) => {
 
@@ -9,6 +9,31 @@ const AdminProducts = ({ products }) => {
   const loadProducts = () => {
     setShowProducts(true);
   }
+
+  const deleteProduct = (id) => {
+    if (window.confirm("Är du säker på att du vill radera denna produkt?")) {
+      fetch(`http://localhost:8000/api/products/${id}`, {
+        method: "DELETE",
+      })
+        .then((resp) => {
+          if (resp.ok) {
+            alert("Produkten har raderats");
+            localStorage.setItem("reload", "true"); 
+            window.location.reload(); 
+          } else {
+            alert("Kunde inte radera produkten");
+          }
+        })
+        .catch((error) => console.error("Fel vid radering:", error));
+    }
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("reload")) {
+      loadProducts();
+      localStorage.removeItem("reload"); 
+    }
+  }, []);
 
     return (
         <div>
@@ -39,7 +64,9 @@ const AdminProducts = ({ products }) => {
                 <td>{product.item_price} kr</td>
                 <td>
                   <a href="#"><img src="/images/edit-page-svg.svg" alt="edit" /></a>
-                  <a href="#"><img src="/images/trashcan-img-svg.svg" alt="trashcan" /></a>
+                  <a href="#" onClick={() => deleteProduct(product.id)}>  
+                    <img src="/images/trashcan-img-svg.svg" alt="trashcan" />
+                  </a>
                 </td>
               </tr>
             ))

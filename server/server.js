@@ -73,3 +73,15 @@ app.get("/api/products/:item_url", (req, res) => {
 app.listen(port, () => {
     console.log(`Server started on port: ${port}`);
 });
+
+app.delete("/api/products/:id", (req, res) => {
+  const {id} = req.params;
+  const deleteStmt = db.prepare("DELETE from products WHERE id = ?");
+  const result = deleteStmt.run(id);
+
+  if (result.changes > 0) {
+    res.status(200).json({ message: "Produkt borttagen" });
+  } else {
+    res.status(404).json({ error: "Produkten hittades inte" });
+  }
+});

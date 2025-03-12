@@ -7,6 +7,8 @@ const bodyParser = require("body-parser");
 const port = 8000;
 
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = new Database("./db/product-manager.db", {
     verbose: console.log,
@@ -48,6 +50,12 @@ app.post("/api/products", (req, res) => {
   const result = insert.run(name, description, image, sku, brand, price, itemUrl);
 
   res.status(201).json({ message: "Produkt tillagd!", id: result.lastInsertRowid, item_url: itemUrl });
+});
+
+app.post('/api/basket', (req, res) => {
+  const productId = req.body.productId;
+  console.log('Produkt-ID mottaget:', productId);
+  res.json({ message: 'Produkt mottagen', productId });
 });
 
 

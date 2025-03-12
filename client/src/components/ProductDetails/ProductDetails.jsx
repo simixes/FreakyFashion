@@ -24,7 +24,10 @@ function ProductDetails({ product }) {
           <p className="clothes-brand">{product.item_brand}</p>
           <p id="description-item1">{product.item_description}</p>
           <p className="price">{product.item_price} SEK</p>
-          <button className="basket-button1">Lägg i varukorg</button>
+          <form action="">
+            <button className="basket-button1">Lägg i varukorg</button>
+          </form>
+          
         </div>
     </section>
   );

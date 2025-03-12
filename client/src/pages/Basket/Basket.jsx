@@ -3,6 +3,7 @@ import BasketDetails from '../../components/BasketDetails/BasketDetails';
 
 const showButton = true;
 const title = "Varukorgen";
+const url = "/checkout";
 
 function Basket() {
 
@@ -12,7 +13,7 @@ function Basket() {
 
   return (
     <main className="main-grid">
-      <BasketDetails showButton={showButton} title={title} />
+      <BasketDetails showButton={showButton} title={title} url={url} />
     </main>
   );
 }

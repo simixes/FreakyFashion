@@ -78,7 +78,17 @@ a {
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    transition: opacity 0.3s ease;
 }
+
+.header-item a img:hover {
+    opacity: 0.3;
+}
+
+#basketIcon {
+    margin-right: 20px;
+}
+
 .header-item ul { /* Menyn */
     list-style-type: none; /* Tar bort prick framför li-items*/
     font-family: Verdana, Geneva, Tahoma, sans-serif;

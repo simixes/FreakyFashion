@@ -37,7 +37,7 @@ function Header({ onSearch }) {
         <Link id="likeIcon" to="/">
           <img src="/images/black-heart-svg.svg" alt="likeIcon" />
         </Link>
-        <Link id="basketIcon" to="/">
+        <Link id="basketIcon" to="/basket">
           <img src="/images/shopping-bag-svg.svg" alt="basketIcon" />
         </Link>
       </div>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import "../BasketDetails/Basket.css"
 import '../Global/Style.css';
 
 
-function BasketDetails({ showButton, title }) {
+function BasketDetails({ showButton, title, url }) {
   
   const testProduct = [
     { id: 1, itemName: "Jeans", price: 399 },
@@ -77,9 +78,11 @@ function BasketDetails({ showButton, title }) {
     </div>
     <div className="basket-btn-container">
       {showButton && (
-        <button className="basket-btn">Till Kassan</button>
-      )}
-    </div> 
+        <Link to={url}>
+          <button className="basket-btn">Till Kassan</button>
+        </Link>
+    )}
+   </div>
   </section>
 
   {/* -------------------------- */}
@@ -135,9 +138,11 @@ function BasketDetails({ showButton, title }) {
   
   <div className="basket-btn-container">
       {showButton && (
-        <button className="basket-btn">Till Kassan</button>
-      )}
-    </div> 
+        <Link to={url}>
+          <button className="basket-btn">Till Kassan</button>
+        </Link>
+    )}
+   </div>
 </section>
 
 

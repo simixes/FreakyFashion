@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BasketDetails from '../../components/BasketDetails/BasketDetails';
 import CostumerDetails from '../../components/Checkout/CostumerDetails';
 
 const showButton = false;
-
 const title = "Kassan";
 
 function Checkout() {
-    return (
-      <main className="main-grid">
-        <BasketDetails showButton={showButton} title={title} />
-        <CostumerDetails />
-      </main>
-    );
-  }
-  
-  export default Checkout;
+
+  useEffect(() => {
+    document.title = "Kassan"; // ✅ Uppdaterar sidans titel
+  }, []); // ✅ Körs endast när komponenten mountas
+
+  return (
+    <main className="main-grid">
+      <BasketDetails showButton={showButton} title={title} />
+      <CostumerDetails />
+    </main>
+  );
+}
+
+export default Checkout;

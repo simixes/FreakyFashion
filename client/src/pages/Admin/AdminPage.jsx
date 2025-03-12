@@ -1,9 +1,13 @@
-import HandleProducts from '../../components/Admin/HandleProducts'
+import { useEffect } from "react";
+import HandleProducts from "../../components/Admin/HandleProducts";
 
 function AdminPage({ products }) {
-    return (
-        <HandleProducts products={products} />
-    );
-  }
   
-  export default AdminPage;
+  useEffect(() => {
+    document.title = "Administration";
+  }, []); 
+
+  return <HandleProducts products={products} />;
+}
+
+export default AdminPage;

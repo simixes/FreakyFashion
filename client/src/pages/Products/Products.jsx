@@ -12,6 +12,7 @@ function Products({ products }) {
       .then((resp) => resp.json())
       .then((product) => {
         setProduct(product);
+        document.title = product.item_name || "Laddar produkt...";
       })
       .catch((error) => {
         console.error("Error fetching product:", error); 

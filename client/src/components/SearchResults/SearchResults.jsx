@@ -72,7 +72,7 @@ function SearchResults({ products }) {
               <div className="main-item-img">
                 <img
                   className="fashion-img"
-                  src="https://placehold.co/1000x1200?text=No+item+found\nTry+Again"
+                  src="https://placehold.co/1000x1200?text=No+item+found\nTry+again!"
                   alt="Ingen produkt"
                 />
               </div>

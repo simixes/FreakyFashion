@@ -96,7 +96,10 @@ app.post('/api/basket', (req, res) => {
   res.json({ message: 'Produkt mottagen', productId });
 });
 
-
+app.get('/api/basket', (req, res) => {
+  const basket = req.session?.basket || [];
+  res.json({ basket });
+});
 
 app.get("/api/products/:item_url", (req, res) => {
     const itemUrl = req.params.item_url; // Hämta item_url från URL:en

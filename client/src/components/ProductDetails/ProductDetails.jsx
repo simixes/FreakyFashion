@@ -13,6 +13,7 @@ function ProductDetails({ product }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ productId: product.id }),
+      credentials: 'include', // Skicka med cookies
     });
 
     const result = await response.json();
@@ -45,7 +46,7 @@ function ProductDetails({ product }) {
             <button type="submit" className="basket-button1">
             Lägg i varukorg
             </button>
-    </form>
+          </form>
           
         </div>
     </section>

@@ -3,6 +3,7 @@ const app = express();
 const Database = require("better-sqlite3");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const session = require('express-session');
 
 const port = 8000;
 
@@ -15,13 +16,25 @@ const db = new Database("./db/product-manager.db", {
 });
 
 app.use(cors({
-    origin: ["http://localhost:3000"]
+    origin: ["http://localhost:3000"],
+    credentials: true, // Tillåt cookies att skickas
 }));
+
+app.use(
+  session({
+    secret: 'hemlig_nyckel_010',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      secure: false, // Använd true om du använder HTTPS
+      sameSite: 'lax', // eller 'none' om du använder secure: true
+      httpOnly: true, // Förhindrar åtkomst till cookies via JavaScript
+    },
+  })
+);
 
 // GET API
 app.get("/api/products", (req, res) => {
-
-    // const select = db.prepare("SELECT id, menu FROM header");
 
     const select = db.prepare("SELECT id, item_name, item_description, item_image, item_brand, item_SKU, item_price, created_at, item_url FROM products")
 
@@ -53,8 +66,33 @@ app.post("/api/products", (req, res) => {
 });
 
 app.post('/api/basket', (req, res) => {
+
   const productId = req.body.productId;
+
+  let basket = req.session.basket ?? [];
+
+  let basketItem = basket.find(x => x.product.id == productId);
+
+  if (basketItem) {
+    basketItem.quantity += 1;
+  } else {
+    const product = db.prepare(`SELECT id, item_name, item_description, item_image, item_brand, item_SKU, item_price, created_at, item_url 
+      FROM products 
+      WHERE id = ?
+      `).get(productId);
+
+    basketItem = {
+      product,
+      quantity: 1
+    }
+
+    basket.push(basketItem);
+
+    req.session.basket = basket;
+  }
+
   console.log('Produkt-ID mottaget:', productId);
+  
   res.json({ message: 'Produkt mottagen', productId });
 });
 

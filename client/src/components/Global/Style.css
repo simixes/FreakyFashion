@@ -434,16 +434,11 @@ a {
     /* ---header animation part--- */
 
     .header-item ul li {
-        transition-property: transform;
-        transition-duration: 0.3s;
-        transition-timing-function: ease;
-        transition-delay: 0s;
+        transition: opacity 0.3s ease;
     }
-
+      
     .header-item ul li:hover {
-
-        transform: translateY(-5px); /* Animerar så att menyn rör sig uppåt i Y-led vid hover */
-    
+        opacity: 0.4;
     }
 
     /* ---------HERO PART--------- */

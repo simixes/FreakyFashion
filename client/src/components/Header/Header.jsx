@@ -2,6 +2,7 @@ import '../Global/Style.css';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+
 function Header({ onSearch }) {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");

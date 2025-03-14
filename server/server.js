@@ -134,3 +134,32 @@ app.delete("/api/products/:id", (req, res) => {
     res.status(404).json({ error: "Produkten hittades inte" });
   }
 });
+
+app.put('/api/basket/:productId', (req, res) => {
+  const productId = req.params.productId;
+  const { quantity } = req.body;
+
+  let basket = req.session.basket || [];
+
+  let basketItem = basket.find(x => x.product.id == productId);
+
+  if (basketItem) {
+    basketItem.quantity = quantity;
+    req.session.basket = basket;
+    res.json({ message: 'Kvantitet uppdaterad', productId, quantity });
+  } else {
+    res.status(404).json({ error: 'Produkten hittades inte i varukorgen' });
+  }
+});
+
+app.delete('/api/basket/:productId', (req, res) => {
+  const productId = req.params.productId;
+
+  let basket = req.session.basket || [];
+
+  const updatedBasket = basket.filter(item => item.product.id != productId);
+
+  req.session.basket = updatedBasket;
+
+  res.json({ message: 'Produkt borttagen från varukorgen', productId });
+});

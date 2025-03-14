@@ -6,6 +6,7 @@ import '../Global/Style.css';
 function BasketDetails({ showButton, title, url }) {
   const [basketItems, setBasketItems] = useState([]);
   const [quantities, setQuantities] = useState({});
+  
 
   useEffect(() => {
     fetch(`http://localhost:8000/api/basket`, {
@@ -18,8 +19,17 @@ function BasketDetails({ showButton, title, url }) {
         return resp.json();
       })
       .then((data) => {
-        setBasketItems(data.basket || []); // NU RÄTT ✅
-        document.title = data.basket?.[0]?.product?.item_name || "Varukorg";
+        const basket = data.basket || [];
+        setBasketItems(basket);
+  
+        // Initiera quantities baserat på varukorgens innehåll
+        const initialQuantities = {};
+        basket.forEach(item => {
+          initialQuantities[item.product.id] = item.quantity;
+        });
+        setQuantities(initialQuantities);
+  
+        document.title = basket[0]?.product?.item_name || "Varukorg";
       })
       .catch((error) => {
         console.error("Error fetching basket:", error);
@@ -31,6 +41,22 @@ function BasketDetails({ showButton, title, url }) {
       ...prevQuantities,
       [id]: value
     }));
+  
+    fetch(`http://localhost:8000/api/basket/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ quantity: value }),
+      credentials: 'include',
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Kvantitet uppdaterad:', data);
+      })
+      .catch(error => {
+        console.error('Error updating quantity:', error);
+      });
   };
 
   const getTotalCount = () => {
@@ -45,8 +71,19 @@ function BasketDetails({ showButton, title, url }) {
   };
 
   const deleteProductFromBasket = (productId) => {
-    const updatedBasket = basketItems.filter(item => item.product.id !== productId);
-    setBasketItems(updatedBasket);
+    fetch(`http://localhost:8000/api/basket/${productId}`, {
+      method: 'DELETE',
+      credentials: 'include',
+    })
+      .then(response => response.json())
+      .then(data => {
+        const updatedBasket = basketItems.filter(item => item.product.id !== productId);
+        setBasketItems(updatedBasket);
+        console.log('Produkt borttagen:', data);
+      })
+      .catch(error => {
+        console.error('Error deleting product:', error);
+      });
   };
 
   return (

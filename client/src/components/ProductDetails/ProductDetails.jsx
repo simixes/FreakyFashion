@@ -41,7 +41,7 @@ function ProductDetails({ product }) {
           <p className="clothes-brand">{product.item_brand}</p>
           <p id="description-item1">{product.item_description}</p>
           <p className="price">{product.item_price} SEK</p>
-          <form onSubmit={addToBasket}>
+          <form className="btn-form" onSubmit={addToBasket}>
             <input type="hidden" name="productId" value={product.id} />
             <button type="submit" className="basket-button1">
             Lägg i varukorg

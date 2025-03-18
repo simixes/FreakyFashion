@@ -44,7 +44,7 @@ app.get("/api/products", (req, res) => {
 })
 
 app.post("/api/products", (req, res) => {
-  const { name, description, image, sku, brand, price } = req.body; 
+  const { name, description, image, sku, brand, price, date } = req.body; 
 
   const itemUrl = name
     .toLowerCase()
@@ -56,11 +56,11 @@ app.post("/api/products", (req, res) => {
     .trim();  
 
   const insert = db.prepare(`
-    INSERT INTO products (item_name, item_description, item_image, item_SKU, item_brand, item_price, item_url)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO products (item_name, item_description, item_image, item_SKU, item_brand, item_price, item_url, created_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
 
-  const result = insert.run(name, description, image, sku, brand, price, itemUrl);
+  const result = insert.run(name, description, image, sku, brand, price, itemUrl, date);
 
   res.status(201).json({ message: "Produkt tillagd!", id: result.lastInsertRowid, item_url: itemUrl });
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Importera Link från react-router-dom
+import { Link } from "react-router-dom";
 import '../Global/Style.css';
 import '../ProductGrid/ProductGrid.css';
 
@@ -21,12 +21,35 @@ function ProductList({ products, getSQLiteTimestamp }) {
     return isNew; 
   };
 
+
+  const isProductDateInFuture = (product) => {
+    const productDate = new Date(product.created_at);
+    const currentDate = new Date(getSQLiteTimestamp());
+    return productDate > currentDate; 
+  };
+
+  const validProducts = products.filter(product => !isProductDateInFuture(product));
+
+  const placeholderCount = Math.max(0, 8 - validProducts.length);
+  const fillerProducts = Array(placeholderCount).fill(null);
+
+  const displayProducts = [...validProducts, ...fillerProducts];
+
   return (
     <div className="main">
       <h2 id="main-h2-nonvisible">Our products</h2>
       <div className="product-grid">
-        {products.slice(0, 8).map((product) => {
-          const isNew = newProductBanner(product, getSQLiteTimestamp); // 🔥 Anropa funktionen här!
+        {displayProducts.slice(0, 8).map((product, index) => {
+          if (!product) {
+            return (
+              <article className="main-item" key={`placeholder-${index}`}>
+                <div className="main-item-img placeholder"></div>
+                <div className="main-item-description placeholder"></div>
+              </article>
+            );
+          }
+
+          const isNew = newProductBanner(product, getSQLiteTimestamp); 
 
           return (
             <article className="main-item" key={product.id}>
@@ -61,3 +84,4 @@ function ProductList({ products, getSQLiteTimestamp }) {
 }
 
 export default ProductList;
+

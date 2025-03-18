@@ -4,7 +4,7 @@ import Spots from "../../components/Spots/Spots";
 import ProductGrid from "../../components/ProductGrid/ProductGrid"; 
 import { useEffect } from "react";
 
-function Home({ products }) {
+function Home({ products, getSQLiteTimestamp }) {
 
   useEffect(() => {
     document.title = "FreakyFashion"; 
@@ -19,7 +19,7 @@ function Home({ products }) {
       <Spots />
 
       {/* Produkter */}
-        <ProductGrid products={products} />
+        <ProductGrid products={products} getSQLiteTimestamp={getSQLiteTimestamp} />
     </main>
   );
 }

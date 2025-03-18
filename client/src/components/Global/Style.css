@@ -255,44 +255,35 @@ a {
     z-index: 10; 
 }
 
-/* Animera med Keyframes pulserade Nyhet-banner */
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
 .new-icon-hidden {
     display: none;
 }
 
 .new-icon { 
     position: absolute;
-    top: 15px;
-    left: 15px; 
-    background-color: rgb(231, 182, 22);
-    border-radius: 15px; 
+    top: 20px;
+    left: 20px;
+    background-color: rgb(231, 182, 22);  
+    color: white; 
+    border-radius: 5px;  
     z-index: 20;
-    padding: 0 40px 0 40px;
+    padding: 5px 20px !important;
     font-style: italic;
-    animation: pulse 3s infinite; /* Pulserande animation */
+    font-weight: bold;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 .new-icon p {
-    color: rgb(51, 51, 51);
-    font-size: 25px;
-    font-weight: bold;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 18px !important;
+    font-weight: bold;  
+    text-align: center; 
 }
 
 #like-button-like {
@@ -707,7 +698,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 75%;
 }
 
 
@@ -871,6 +861,10 @@ a {
 @media (min-width: 1024px) {
     #related-heading {
         font-size: 40px;
+    }
+
+    #product-img {
+        max-width: 80%;
     }
 }
 

@@ -10,7 +10,7 @@ function BasketDetails({ showButton, title, url }) {
 
   useEffect(() => {
     fetch(`http://localhost:8000/api/basket`, {
-      credentials: "include" // För att skicka cookies med fetch
+      credentials: "include" 
     })
       .then((resp) => {
         if (!resp.ok) {
@@ -22,7 +22,7 @@ function BasketDetails({ showButton, title, url }) {
         const basket = data.basket || [];
         setBasketItems(basket);
   
-        // Initiera quantities baserat på varukorgens innehåll
+        
         const initialQuantities = {};
         basket.forEach(item => {
           initialQuantities[item.product.id] = item.quantity;

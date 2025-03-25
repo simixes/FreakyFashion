@@ -39,9 +39,7 @@ const AddNewProduct = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
-    // Om det är pris-datumet, formatera till SQLite3-format
     if (name === "date" && value) {
-      // Ersätt 'T' med ett mellanslag och lägg till sekunder
       const formattedDate = value.replace("T", " ") + ":00";
       setFormData({
         ...formData,
@@ -55,14 +53,13 @@ const AddNewProduct = () => {
     }
   };
 
-  // Sätt standardvärdet för "date" till aktuellt datum och tid
   useEffect(() => {
-    const currentDate = new Date().toISOString().slice(0, 16);  // Hämtar aktuell tid i ISO-format
+    const currentDate = new Date().toISOString().slice(0, 16); 
     setFormData((prevFormData) => ({
       ...prevFormData,
-      date: currentDate,  // Sätt standardvärdet för date till nuvarande datum och tid
+      date: currentDate, 
     }));
-  }, []); // Kör endast när komponenten först laddas
+  }, []); 
 
   return (
     <div>

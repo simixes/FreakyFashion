@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Importera Link från react-router-dom
+import { Link } from "react-router-dom"; 
 import '../Global/Style.css';
 
 function ProductDetails({ product }) {
@@ -13,7 +13,7 @@ function ProductDetails({ product }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ productId: product.id }),
-      credentials: 'include', // Skicka med cookies
+      credentials: 'include',
     });
 
     const result = await response.json();

@@ -17,7 +17,7 @@ const db = new Database("./db/product-manager.db", {
 
 app.use(cors({
     origin: ["http://localhost:3000"],
-    credentials: true, // Tillåt cookies att skickas
+    credentials: true, 
 }));
 
 app.use(
@@ -26,14 +26,14 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-      secure: false, // Använd true om du använder HTTPS
-      sameSite: 'lax', // eller 'none' om du använder secure: true
-      httpOnly: true, // Förhindrar åtkomst till cookies via JavaScript
+      secure: false, 
+      sameSite: 'lax', 
+      httpOnly: true, 
     },
   })
 );
 
-// GET API
+
 app.get("/api/products", (req, res) => {
 
     const select = db.prepare("SELECT id, item_name, item_description, item_image, item_brand, item_SKU, item_price, created_at, item_url FROM products")
@@ -102,7 +102,7 @@ app.get('/api/basket', (req, res) => {
 });
 
 app.get("/api/products/:item_url", (req, res) => {
-    const itemUrl = req.params.item_url; // Hämta item_url från URL:en
+    const itemUrl = req.params.item_url; 
   
     const select = db.prepare(`
       SELECT id, item_name, item_description, item_image, item_brand, item_SKU, item_price, created_at, item_url 
@@ -110,12 +110,12 @@ app.get("/api/products/:item_url", (req, res) => {
       WHERE item_url = ?
     `);
   
-    const product = select.get(itemUrl); // Hämta produkten från databasen
+    const product = select.get(itemUrl); 
   
     if (product) {
-      res.json(product); // Skicka tillbaka produkten som JSON
+      res.json(product); 
     } else {
-      res.status(404).json({ error: "Product not found" }); // Skicka ett felmeddelande om produkten inte hittas
+      res.status(404).json({ error: "Product not found" }); 
     }
   });
 

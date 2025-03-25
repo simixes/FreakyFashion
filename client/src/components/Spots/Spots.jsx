@@ -1,6 +1,6 @@
 import '../Global/Style.css';
 import React from "react";
-import { Link } from "react-router-dom"; // Importera Link från react-router-dom
+import { Link } from "react-router-dom";
 
 function Spots() {
     const spots = [

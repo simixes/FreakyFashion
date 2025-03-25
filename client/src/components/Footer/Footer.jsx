@@ -10,10 +10,8 @@ function Footer() {
     { id: "Three", title: "Kundtjänst", items: ["Kontakta oss", "Skicka ett meddelande"] }
   ];
   
-  // Skapa ett state för att hålla reda på vilken sektion som är öppen
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // Funktion för att toggla aktiv index
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -60,7 +58,7 @@ function Footer() {
               <button
                 className={`accordion-button ${activeIndex === index ? "" : "collapsed"}`}
                 type="button"
-                onClick={() => toggleAccordion(index)}  // Hanterar klick
+                onClick={() => toggleAccordion(index)}  
                 aria-expanded={activeIndex === index ? "true" : "false"}
                 aria-controls={`collapse${section.id}`}
               >

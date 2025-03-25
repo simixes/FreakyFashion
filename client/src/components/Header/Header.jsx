@@ -9,8 +9,8 @@ function Header({ onSearch }) {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate(`/search?q=${searchTerm}`); // Navigera till sökresultat-sidan
-    onSearch(searchTerm); // Skicka söktermen till föräldrakomponenten (om det behövs)
+    navigate(`/search?q=${searchTerm}`); 
+    onSearch(searchTerm); 
   };
 
   return (

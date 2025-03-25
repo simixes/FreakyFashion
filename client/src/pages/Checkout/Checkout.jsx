@@ -8,8 +8,8 @@ const title = "Kassan";
 function Checkout() {
 
   useEffect(() => {
-    document.title = "Kassan"; // ✅ Uppdaterar sidans titel
-  }, []); // ✅ Körs endast när komponenten mountas
+    document.title = "Kassan"; 
+  }, []); 
 
   return (
     <main className="main-grid">

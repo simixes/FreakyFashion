@@ -77,9 +77,21 @@ function BasketDetails({ showButton, title, url }) {
     })
       .then(response => response.json())
       .then(data => {
-        const updatedBasket = basketItems.filter(item => item.product.id !== productId);
-        setBasketItems(updatedBasket);
         console.log('Produkt borttagen:', data);
+  
+        
+        setBasketItems(prevItems => {
+          const updatedItems = prevItems.filter(item => item.product.id !== productId);
+          
+          
+          setQuantities(prevQuantities => {
+            const updatedQuantities = { ...prevQuantities };
+            delete updatedQuantities[productId]; 
+            return updatedQuantities;
+          });
+  
+          return updatedItems;
+        });
       })
       .catch(error => {
         console.error('Error deleting product:', error);

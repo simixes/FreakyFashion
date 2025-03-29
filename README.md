@@ -39,17 +39,17 @@ client/
 │   │   ├── Checkout/
 │   │   ├── Home/
 │   │   ├── Products/
-│── vite.config.js      # Vite-konfiguration
-│── package.json        # Projektberoenden och skript
-server/
+│   ├── vite.config.js      # Vite-konfiguration
+│   ├── package.json        # Projektberoenden och skript
+│── server/             # Backend-server
 ```
 
 ## 🛠️ Installation & Körning
 
 1. **Kloning av repository:**
    ```sh
-   git clone <repo-url>
-   cd client
+   git clone https://github.com/simixes/FreakyFashion.git
+   cd FreakyFashion
    ```
 
 2. **Installera beroenden:**
@@ -57,11 +57,20 @@ server/
    npm install
    ```
 
-3. **Starta utvecklingsserver:**
+3. **Starta frontend och backend i separata terminaler:**
+   **Terminal 1:**
    ```sh
+   cd client
    npm run dev
    ```
-   Servern startar på `http://localhost:3000`
+   - Frontend startas på `http://localhost:3000`
+
+   **Terminal 2:**
+   ```sh
+   cd server
+   npm run dev
+   ```
+   - Backend-servern körs på `http://localhost:8000`
 
 4. **Bygga för produktion:**
    ```sh

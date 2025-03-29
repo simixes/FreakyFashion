@@ -6,8 +6,9 @@ import '../Global/Style.css';
 function BasketDetails({ showButton, title, url }) {
   const [basketItems, setBasketItems] = useState([]);
   const [quantities, setQuantities] = useState({});
-  
 
+  document.title = "Varukorg";
+  
   useEffect(() => {
     fetch(`http://localhost:8000/api/basket`, {
       credentials: "include" 
@@ -29,7 +30,6 @@ function BasketDetails({ showButton, title, url }) {
         });
         setQuantities(initialQuantities);
   
-        document.title = basket[0]?.product?.item_name || "Varukorg";
       })
       .catch((error) => {
         console.error("Error fetching basket:", error);
@@ -37,6 +37,7 @@ function BasketDetails({ showButton, title, url }) {
   }, []);
 
   const updateQuantity = (id, value) => {
+    
     setQuantities(prevQuantities => ({
       ...prevQuantities,
       [id]: value

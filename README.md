@@ -72,7 +72,3 @@ server/
    ```sh
    npm run preview
    ```
-
-## 📜 Licens
-
-Detta projekt är licensierat under **MIT License**. Se `LICENSE`-filen för mer information.

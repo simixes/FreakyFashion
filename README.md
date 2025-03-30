@@ -1,7 +1,5 @@
 # Freaky Fashion 🛍️
 
-![Freaky Fashion Logo](public/images/FreakyFashionLogoInvis.png)
-
 Fraky Fashion är en e-handelsplattform för kläder byggd med **React** och **Vite**. Projektet är en del av ett skolprojekt och använder moderna verktyg för frontend-utveckling.
 
 ## 🚀 Teknologier
